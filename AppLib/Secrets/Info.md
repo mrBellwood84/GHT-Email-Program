@@ -27,4 +27,4 @@ Dependency classes and methods will not.
 	
 ---
 
-*I can send a zip file with exluded content by mail if for some reasos needed ^^*
+*I can send a zip file with exluded content by mail by request if needed ^^*
