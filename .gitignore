@@ -338,13 +338,3 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-
-# ==================== #
-#					   #
-#    Added by me ^^    #
-#					   #
-# ==================== # 
-
-
-.gitattributes
-.gitignore
