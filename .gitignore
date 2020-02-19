@@ -343,3 +343,5 @@ healthchecksdb
 
 # TestConsole Project
 /TestConsole
+/AppLib/Secrets/CreateKeyFile.cs
+/AppLib/Secrets/HashCollection.cs
