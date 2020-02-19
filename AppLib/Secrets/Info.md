@@ -1,6 +1,5 @@
 ﻿# Secrets
 
----
 
 Files contain classes and methods used for encryption and integrity.
 __Files *will not* be published.__
@@ -15,8 +14,8 @@ Dependency classes and methods will not.
 	* Generate a key file specified for the program.
 	* Only used for generating a new key file if and when needed.
 
-2. Class HashCollection:
-	* Hold methods for computing and comparing hashes.
+2. Class KeyFile:
+	* Object for key file
 
 3. Class VerifyKeyFile:
 	* Verify integrity of key file.

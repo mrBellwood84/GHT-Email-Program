@@ -345,3 +345,6 @@ healthchecksdb
 /TestConsole
 /AppLib/Secrets/CreateKeyFile.cs
 /AppLib/Secrets/HashCollection.cs
+/AppLib/Secrets/KeyVector.cs
+/AppLib/Secrets/VerifyKeyFile.cs
+/AppLib/Secrets/KeyFile.cs
