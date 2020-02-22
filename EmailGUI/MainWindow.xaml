@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmailGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Grand Terminus - Epost Sender" Height="600" Width="950">
     <Grid>
+        <Frame x:Name="Main">
+            
+        </Frame>
 
     </Grid>
 </Window>

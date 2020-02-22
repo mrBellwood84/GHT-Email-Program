@@ -348,3 +348,6 @@ healthchecksdb
 /AppLib/Secrets/KeyVector.cs
 /AppLib/Secrets/VerifyKeyFile.cs
 /AppLib/Secrets/KeyFile.cs
+/EmailGUI/Res/BELL.TTF
+/EmailGUI/Res/BELLB.TTF
+/EmailGUI/Res/BELLI.TTF
