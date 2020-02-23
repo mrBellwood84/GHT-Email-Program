@@ -351,3 +351,5 @@ healthchecksdb
 /EmailGUI/Res/BELL.TTF
 /EmailGUI/Res/BELLB.TTF
 /EmailGUI/Res/BELLI.TTF
+/AppLib/Secrets/Password.cs
+/AppLib/Secrets/Encryptor.cs

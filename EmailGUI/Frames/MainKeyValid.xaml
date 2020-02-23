@@ -12,7 +12,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <!-- Sidebar for buttons -->
@@ -38,21 +38,30 @@
 
                 <Border Grid.Row="1">
                     <StackPanel>
-                        <Button Content="Se Liste"/>
-                        <Button Content="Last inn Fil"/>
-                        <Button Content="Maler"/>
+                        <Button Content="Se Liste" Click="loadListPage"/>
+                        <Button Content="Last inn Fil" Click="loadListFile"/>
+                        <Button Content="Maler" Click="loadTemplatePage"/>
                     </StackPanel>
                 </Border>
 
                 <Border Grid.Row="2">
-                    <StackPanel>
-                        <Button Content="Send E-post"/>
-                        <Button Content="Innstillinger"/>
-                        <Button Content="Avslutt"/>
+                    <StackPanel Margin="0,0,0,10">
+                        <Button Content="Send E-post" Click="sendEmails"/>
+                        <Button Content="Innstillinger" Click="loadSettingsPage"/>
+                        <Button Content="Avslutt" Click="quitApp"/>
                     </StackPanel>
                 </Border>
                 
             </Grid>
+        </Border>
+
+        <Border Grid.Column="1">
+            <Frame x:Name="ContentFrame" 
+                   NavigationUIVisibility="Hidden"
+                   Height="auto"
+                   Width="auto">
+                
+            </Frame>
         </Border>
 
 

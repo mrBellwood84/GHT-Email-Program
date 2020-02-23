@@ -26,13 +26,13 @@ namespace EmailGUI
     {
         public MainWindow()
         {
-            string keyPaht = GetPath.Keys;      // get key path
-
+            // string keyPaht = GetPath.Keys;      // get key path
             // CreateKeyFile createKey = new CreateKeyFile(2020, 07, 31);      // delete this before production or not needed
             // createKey.WriteKeyFile(keyPaht);                                // delete this before production or not needed
 
             KeyFile keyFile = new KeyFile();    // get keyfile content
-           
+            App.Key = keyFile;
+
             InitializeComponent();
 
             LoadByValidKey(keyFile);    // load page dependent on keyFile

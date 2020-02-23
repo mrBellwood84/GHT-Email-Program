@@ -21,6 +21,44 @@ namespace EmailGUI.Frames
         public MainKeyValid()
         {
             InitializeComponent();
+            ContentFrame.Content = new Frames.Default();
+        }
+
+        private void loadListPage(object sender, RoutedEventArgs e)
+        {
+            // load list page
+        }
+
+        private void loadListFile(object sender, RoutedEventArgs e)
+        {
+            // load list file
+        }
+
+        private void loadTemplatePage(object sender, RoutedEventArgs e)
+        {
+            // load page for templates
+        }
+
+        private void sendEmails(object sender, RoutedEventArgs e)
+        {
+            // send emails
+        }
+
+        private void loadSettingsPage(object sender, RoutedEventArgs e)
+        {
+            if (!App.ConfigFileExist)
+            {
+                ContentFrame.Content = new Frames.SetNewPassword();
+            }
+            else
+            {
+                ContentFrame.Content = new Frames.EnterPassword();
+            }
+        }
+
+        private void quitApp(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }
