@@ -172,7 +172,7 @@
         
         <!-- message -->
         <TextBlock x:Name="saveMessage"
-                   Text="test"
+                   Text=""
                    Grid.ColumnSpan="3"
                    Grid.Row="8"
                    VerticalAlignment="Center"

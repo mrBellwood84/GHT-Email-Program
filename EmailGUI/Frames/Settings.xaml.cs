@@ -13,7 +13,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 // own lib
+using AppLib;
 using AppLib.Collection;
+using AppLib.Email;
+
 
 
 namespace EmailGUI.Frames
@@ -131,8 +134,31 @@ namespace EmailGUI.Frames
 
         private void TestConnection(object sender, RoutedEventArgs e)
         {
-            saveMessage.Text = "Funksjonenen er ennå ikke implementert...";
-            saveMessage.Foreground = new SolidColorBrush(Colors.Blue);
+            TestMail mail = new TestMail();
+
+            saveMessage.Text = "Sender Epost";
+            saveMessage.Foreground = new SolidColorBrush(Colors.Orange);
+
+            mail.Send();
+
+            if (!mail.BuildSuccess)
+            {
+                saveMessage.Text = "Kunne ikke bygge epost! Se logg...";
+                saveMessage.Foreground = new SolidColorBrush(Colors.Red);
+                Logger.AppendLogEntry("EMAIL_ERROR", mail.BuildError);
+            }
+            else if (!mail.SendSuccess)
+            {
+                saveMessage.Text = "Kunne ikke sende epost! Se logg...";
+                saveMessage.Foreground = new SolidColorBrush(Colors.Red);
+                Logger.AppendLogEntry("EMAIL_ERROR",mail.SendError);
+            }
+            else
+            {
+                saveMessage.Text = "Testen var vellykkket";
+                saveMessage.Foreground = new SolidColorBrush(Colors.Green);
+            }
+
         }
     }
 }
