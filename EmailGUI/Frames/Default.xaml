@@ -9,9 +9,11 @@
       Title="Default">
 
     <Grid>
-        <Label Content="Default page"
+        <Image Source="../Res/Img/logo2.png"
+               Opacity="0.5"
+               Height="300"
+               Width="auto"
                VerticalAlignment="Center"
-               HorizontalAlignment="Center"
-               FontSize="50"/>
+               HorizontalAlignment="Center"/>
     </Grid>
 </Page>

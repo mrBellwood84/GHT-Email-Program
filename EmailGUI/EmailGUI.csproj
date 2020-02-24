@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Res\logo1.png" />
+    <None Remove="Res\logo2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Res\Img\logo2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Config\" />
     <Folder Include="Lib\" />
     <Folder Include="Log\" />
@@ -14,6 +25,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AppLib\AppLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Res\Img\logo1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

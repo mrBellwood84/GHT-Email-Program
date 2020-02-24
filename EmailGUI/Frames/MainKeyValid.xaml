@@ -17,8 +17,10 @@
 
         <!-- Sidebar for buttons -->
         <Border Grid.Column="0" 
-                Background="LightGray"
-                Height="auto">
+                Background="White"
+                Height="auto"
+                BorderBrush="LightGray"
+                BorderThickness="0,0,2,0">
             
             <Grid>
                 <Grid.RowDefinitions>
@@ -29,11 +31,11 @@
 
                 <!-- LOGO -->
                 <Border Grid.Row="0"
-                        BorderBrush="DarkGray"
+                        BorderBrush="LightGray"
                         BorderThickness="0,0,0,1">
-                    <Label Content="LOGO"
-                           HorizontalAlignment="Center"
-                           FontSize="20"/>
+                    <Image Source="../Res/Img/logo1.png" 
+                           Width="200" 
+                           Margin="0,5"/>
                 </Border>
 
                 <Border Grid.Row="1">
@@ -60,7 +62,6 @@
                    NavigationUIVisibility="Hidden"
                    Height="auto"
                    Width="auto">
-                
             </Frame>
         </Border>
 
