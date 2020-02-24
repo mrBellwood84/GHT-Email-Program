@@ -14,16 +14,18 @@ namespace AppLib.Collection
         protected static readonly string root = Directory.GetCurrentDirectory();
 
         // folders
-        protected static readonly string configFolder = "config";     // config folder
-        protected static readonly string logFolder = "log";        // log folder
+        protected static readonly string configFolder = "config";   // config folder
+        protected static readonly string logFolder = "log";         // log folder
+        protected static readonly string templatesFolder = "Templates";   // temlates folder
 
         // files
-        protected static readonly string keysFile = ".keys";      // key file
+        protected static readonly string keysFile = ".keys";        // key file
         protected static readonly string configFile = ".conf";      // config file path in program root
-        protected static readonly string logFile = ".log";       // log file path in program root
+        protected static readonly string logFile = ".log";          // log file path in program root
 
         public static string Keys { get => Path.Combine(root, configFolder, keysFile); }
         public static string Config { get => Path.Combine(root, configFolder, configFile); }
+        public static string TemplatesFolder { get => Path.Combine(root, templatesFolder); }
 
         public static string Log
         {
@@ -38,5 +40,6 @@ namespace AppLib.Collection
                 return Path.Combine(path, logFile);             // return path;
             }
         }
+
     }
 }

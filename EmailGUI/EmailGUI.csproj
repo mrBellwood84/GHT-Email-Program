@@ -33,4 +33,10 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Templates\TestPage.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -134,9 +134,9 @@ namespace EmailGUI.Frames
 
         private void TestConnection(object sender, RoutedEventArgs e)
         {
+            saveMessage.Text = "Sender Epost";
             TestMail mail = new TestMail();
 
-            saveMessage.Text = "Sender Epost";
             saveMessage.Foreground = new SolidColorBrush(Colors.Orange);
 
             mail.Send();

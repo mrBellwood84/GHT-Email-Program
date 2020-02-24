@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Mail;
 
 namespace AppLib.Email
@@ -20,11 +21,16 @@ namespace AppLib.Email
         public bool SendSuccess { get => sendSuccess; }
         public string SendError { get => sendError; }
 
+        private string text; 
+        public string TEXT { get => text; }
+
 
         public TestMail()
         {
             // get config file
             Collection.ConfigFile configFile = new Collection.ConfigFile();
+            this.text = CreateMailBody();
+            
 
             // build email and smpt server object
             try
@@ -33,7 +39,8 @@ namespace AppLib.Email
                 this.mail.From = new MailAddress(configFile.SenderEmail);
                 this.mail.To.Add(configFile.SenderEmail);
                 this.mail.Subject = "Tester Epost program";
-                this.mail.Body = "Dette er en test av smtp server. Testen var vellykket!";
+                this.mail.Body = CreateMailBody();
+                this.mail.IsBodyHtml = true;
 
                 // set smtp server
                 this.smtpServer = new SmtpClient(configFile.SmtpServer);
@@ -58,6 +65,23 @@ namespace AppLib.Email
             {
                 this.sendSuccess = false;
                 this.sendError = ex.ToString();
+            }
+        }
+
+        private string CreateMailBody()
+        {
+            string path = Collection.GetPath.TemplatesFolder;
+            if (!Directory.Exists(path))
+            {
+                return "Dette er en testmail fra programvare\n" +
+                    "Hvis du mottar denne eposten, vil det si at programvaren virker\n" +
+                    "Derimot ser det ut til at programvaren ikke sender oppsatt mal";
+            }
+            else
+            {
+                path = Path.Combine(path, "TestPage.html");
+                string text = File.ReadAllText(path);
+                return text;
             }
         }
     }

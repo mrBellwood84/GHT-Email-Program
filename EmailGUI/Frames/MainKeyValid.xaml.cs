@@ -26,22 +26,22 @@ namespace EmailGUI.Frames
 
         private void loadListPage(object sender, RoutedEventArgs e)
         {
-            // load list page
+            ContentFrame.Content = new Frames.ViewReciverList();
         }
 
         private void loadListFile(object sender, RoutedEventArgs e)
         {
-            // load list file
+            // get file list
         }
 
         private void loadTemplatePage(object sender, RoutedEventArgs e)
         {
-            // load page for templates
+            ContentFrame.Content = new Frames.ViewTemplateList();
         }
 
         private void sendEmails(object sender, RoutedEventArgs e)
         {
-            // send emails
+            ContentFrame.Content = new Frames.SendEmailPage();
         }
 
         private void loadSettingsPage(object sender, RoutedEventArgs e)
