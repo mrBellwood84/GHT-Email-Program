@@ -9,9 +9,68 @@
       Title="ViewReciverList">
 
     <Grid>
-        <Label HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               FontSize="50"
-               Content="Epost liste"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- top panel -->
+        <Grid Grid.Row="0"
+              Height="auto"
+              Margin="5">
+
+            <StackPanel Orientation="Horizontal"
+                        Height="auto"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left">
+                <Button Content="Åpne"
+                        FontSize="10"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        Margin="0,0,10,0"/>
+
+                <Button Content="Lagre"
+                        FontSize="10"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        Margin="0,0,10,0"/>
+
+
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal"
+                        Height="auto"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+                <Label Content="Søk navn: "
+                       VerticalAlignment="Center"/>
+                <TextBox x:Name="SearchField"
+                         VerticalAlignment="Center"
+                         Width="250"
+                         BorderBrush="LightGray"
+                         Padding="2"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- item list-->
+        <ListView x:Name="ReciverList"
+                  Grid.Row="1">
+
+        </ListView>
+
+        <Grid Grid.Row="2"
+              Height="auto"
+              Margin="5">
+
+            <Button Content="Legg til"
+                    FontSize="10"
+                    Width="100"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,10,0"/>
+
+        </Grid>
     </Grid>
 </Page>

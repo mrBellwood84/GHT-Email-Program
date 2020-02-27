@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using AppLib.Email;
+
 namespace EmailGUI.Frames
 {
     /// <summary>
@@ -21,6 +23,14 @@ namespace EmailGUI.Frames
         public ViewReciverList()
         {
             InitializeComponent();
+
+            List<Reciver> recivers = App.Recivers;
+
+            recivers.Add(new Reciver("kristian", "mail@mail.com"));
+            recivers.Add(new Reciver("hege", "test@mail.com"));
+            recivers.Add(new Reciver("Ballemann","email@balle.com"));
+
+            ReciverList.ItemsSource = recivers;
         }
     }
 }

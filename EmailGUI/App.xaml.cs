@@ -10,6 +10,7 @@ using System.Windows;
 // own libs
 using AppLib.Collection;
 using AppLib.Secrets;
+using AppLib.Email;
 
 namespace EmailGUI
 {
@@ -24,13 +25,16 @@ namespace EmailGUI
         {
             get => checkConfigFile();
         }
-
         private static bool checkConfigFile()
         {
             string path = GetPath.Config;
             return File.Exists(path);
         }
 
+
+        public static List<Reciver> Recivers = new List<Reciver>();
+        public static int ReciverFileAdded = 0;
+        public static int ReciverUserAdded = 0;
     }
 
 }

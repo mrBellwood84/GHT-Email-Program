@@ -40,8 +40,8 @@
 
                 <Border Grid.Row="1">
                     <StackPanel>
-                        <Button Content="Se Liste" Click="loadListPage"/>
-                        <Button Content="Last inn Fil" Click="loadListFile"/>
+                        <Button Content="Liste" Click="loadListPage"/>
+                        <Button Content="Importer" Click="loadListFile"/>
                         <Button Content="Maler" Click="loadTemplatePage"/>
                     </StackPanel>
                 </Border>
