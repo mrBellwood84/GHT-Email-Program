@@ -25,18 +25,20 @@
                         Height="auto"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Left">
+                
                 <Button Content="Åpne"
                         FontSize="10"
                         Width="100"
                         VerticalAlignment="Center"
-                        Margin="0,0,10,0"/>
+                        Margin="0,0,10,0"
+                        Click="OpenFile"/>
 
                 <Button Content="Lagre"
                         FontSize="10"
                         Width="100"
                         VerticalAlignment="Center"
-                        Margin="0,0,10,0"/>
-
+                        Margin="0,0,10,0"
+                        Click="SaveFile"/>
 
             </StackPanel>
             
@@ -46,14 +48,18 @@
                         HorizontalAlignment="Right">
                 <Label Content="Søk navn: "
                        VerticalAlignment="Center"/>
+
                 <TextBox x:Name="SearchField"
                          VerticalAlignment="Center"
                          Width="250"
                          BorderBrush="LightGray"
-                         Padding="2"/>
+                         Padding="2"
+                         Keyboard.KeyUp="nameSearch">
+                </TextBox>
             </StackPanel>
         </Grid>
 
+        <!-- datagrid -->
         <DataGrid x:Name="ReciverData"
                   Grid.Row="1"
                   Margin="10"
@@ -85,9 +91,6 @@
             
         </DataGrid>
 
-
-
-
         <!-- bottom panel -->
         <Grid Grid.Row="2"
               Height="auto"
@@ -100,6 +103,13 @@
                     HorizontalAlignment="Left"
                     Margin="0,0,10,0"
                     Click="AddReciver"/>
+            <Button Content="Tøm Liste"
+                    FontSize="10"
+                    Width="100"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,10,0"
+                    Click="EmptyList"/>
 
         </Grid>
     </Grid>

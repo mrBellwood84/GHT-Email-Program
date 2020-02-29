@@ -14,9 +14,10 @@ namespace AppLib.Collection
         protected static readonly string root = Directory.GetCurrentDirectory();
 
         // folders
-        protected static readonly string configFolder = "config";   // config folder
-        protected static readonly string logFolder = "log";         // log folder
-        protected static readonly string templatesFolder = "Templates";   // temlates folder
+        protected static readonly string configFolder = "config";           // config folder
+        protected static readonly string logFolder = "log";                 // log folder
+        protected static readonly string templatesFolder = "templates";     // temlates folder
+        protected static readonly string savedListFolder = "saved";         // saved lists
 
         // files
         protected static readonly string keysFile = ".keys";        // key file
@@ -26,6 +27,20 @@ namespace AppLib.Collection
         public static string Keys { get => Path.Combine(root, configFolder, keysFile); }
         public static string Config { get => Path.Combine(root, configFolder, configFile); }
         public static string TemplatesFolder { get => Path.Combine(root, templatesFolder); }
+
+        public static string SaveListFolder
+        {
+            get
+            {
+                string path = Path.Combine(root, savedListFolder);  // get path
+                bool exist = Directory.Exists(path);                // check if path exist
+                if (!exist)                                         // if path dont exist
+                {   
+                    Directory.CreateDirectory(path);                // create path
+                }
+                return path;                                        // return path
+            }
+        }
 
         public static string Log
         {
