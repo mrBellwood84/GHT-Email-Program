@@ -31,10 +31,8 @@ namespace EmailGUI
             return File.Exists(path);
         }
 
-
+        //  Create a object list for Recivers list in ui
         public static List<Reciver> Recivers = new List<Reciver>();
-        public static int ReciverFileAdded = 0;
-        public static int ReciverUserAdded = 0;
     }
 
 }

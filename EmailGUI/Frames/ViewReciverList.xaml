@@ -54,12 +54,41 @@
             </StackPanel>
         </Grid>
 
-        <!-- item list-->
-        <ListView x:Name="ReciverList"
-                  Grid.Row="1">
+        <DataGrid x:Name="ReciverData"
+                  Grid.Row="1"
+                  Margin="10"
+                  Padding="0"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Center"
+                  CanUserAddRows="False"
+                  CanUserResizeColumns="False"
+                  CanUserResizeRows="False"
+                  AutoGenerateColumns="False"
+                  AlternatingRowBackground="WhiteSmoke"
+                  BorderThickness="0"
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Auto"
+                  GridLinesVisibility="Vertical"
+                  VerticalGridLinesBrush="WhiteSmoke">
 
-        </ListView>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Navn" 
+                                    Binding="{Binding IsAsync=True, Path=FullName}"
+                                    MinWidth="200"/>
+                <DataGridTextColumn Header="Epostadresse"
+                                    Binding="{Binding IsAsync=True, Path=Email}"
+                                    MinWidth="250"/>
+                <DataGridCheckBoxColumn Header="Send"
+                                        Binding="{Binding IsAsync=True, Path=Send}"/>
+            </DataGrid.Columns>
+            
+            
+        </DataGrid>
 
+
+
+
+        <!-- bottom panel -->
         <Grid Grid.Row="2"
               Height="auto"
               Margin="5">
@@ -69,7 +98,8 @@
                     Width="100"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"
-                    Margin="0,0,10,0"/>
+                    Margin="0,0,10,0"
+                    Click="AddReciver"/>
 
         </Grid>
     </Grid>

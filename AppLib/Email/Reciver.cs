@@ -3,72 +3,73 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
+using AppLib.Collection;
+
 namespace AppLib.Email
 {
     public class Reciver
     {
         /** Handle all data specific for reciver of email 
-         *  Only basic data per now, but can be expanded     */
+         *  Only basic data for now, but can be expanded     */
 
-        private string _id;
-        private string name;
+
+        private string fullName;
         private string email;
         private bool send = true;
 
-        public string ID
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-        public string Name
+        public string FullName
         {
             get
             {
-                if (name == null)
+                if ((fullName == null) || (fullName == ""))
                 {
-                    return "Navn mangler";
+                    return "NAVN MANGLER";
                 }
                 else
                 {
-                    return name;
+                    return fullName;
                 }
             }
-            set { name = value; }
+            set
+            {
+                fullName = FormatString.Name(value);
+            }
         }
 
         public string Email
         {
-            get 
+            get
             {
-                if (email == null)
+                if ((email == null) || (email == ""))
                 {
-                    return ("Epost mangler");
+                    return "EPOST MANGLER";
                 }
                 else
                 {
                     return email;
                 }
-
             }
-            set { name = value; }
+            set
+            {
+                email = value;
+            }
         }
 
         public bool Send
         {
-            get { return send; }
-            set { send = value; }
+            get => send;
+            set => send = value;
         }
 
-        // defult constructor return empty object
+
         public Reciver()
         {
-
+            // default return empty object
         }
 
-        // second constructor for basic information
-        public Reciver(string name, string email)
+        public Reciver(string fullName, string email)
         {
-            this.name = name;
+            this.fullName = FormatString.Name(fullName);
             this.email = email;
         }
     }

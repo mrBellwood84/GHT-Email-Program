@@ -23,14 +23,19 @@ namespace EmailGUI.Frames
         public ViewReciverList()
         {
             InitializeComponent();
+            ReciverData.ItemsSource = App.Recivers;
+            ReciverData.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Navn", System.ComponentModel.ListSortDirection.Descending));
+        }
 
-            List<Reciver> recivers = App.Recivers;
+        private void AddReciver(object sender, RoutedEventArgs e)
+        {
+            Frames.AddReciver addReciver = new Frames.AddReciver();
+            NavigationService.Navigate(addReciver);
+        }
 
-            recivers.Add(new Reciver("kristian", "mail@mail.com"));
-            recivers.Add(new Reciver("hege", "test@mail.com"));
-            recivers.Add(new Reciver("Ballemann","email@balle.com"));
+        private void ReciverData_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
 
-            ReciverList.ItemsSource = recivers;
         }
     }
 }
