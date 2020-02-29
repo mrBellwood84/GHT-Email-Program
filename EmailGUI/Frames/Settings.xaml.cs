@@ -134,31 +134,7 @@ namespace EmailGUI.Frames
 
         private void TestConnection(object sender, RoutedEventArgs e)
         {
-            saveMessage.Text = "Sender Epost";
-            TestMail mail = new TestMail();
-
-            saveMessage.Foreground = new SolidColorBrush(Colors.Orange);
-
-            mail.Send();
-
-            if (!mail.BuildSuccess)
-            {
-                saveMessage.Text = "Kunne ikke bygge epost! Se logg...";
-                saveMessage.Foreground = new SolidColorBrush(Colors.Red);
-                Logger.AppendLogEntry("EMAIL_ERROR", mail.BuildError);
-            }
-            else if (!mail.SendSuccess)
-            {
-                saveMessage.Text = "Kunne ikke sende epost! Se logg...";
-                saveMessage.Foreground = new SolidColorBrush(Colors.Red);
-                Logger.AppendLogEntry("EMAIL_ERROR",mail.SendError);
-            }
-            else
-            {
-                saveMessage.Text = "Testen var vellykkket";
-                saveMessage.Foreground = new SolidColorBrush(Colors.Green);
-            }
-
+            MessageBox.Show("Ikke implementert...");
         }
     }
 }

@@ -7,8 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Res\Img\headerlogo.tif" />
     <None Remove="Res\logo1.png" />
     <None Remove="Res\logo2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Res\Img\headerlogo.tif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -18,9 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Config\" />
-    <Folder Include="Lib\" />
-    <Folder Include="Log\" />
+    <Folder Include="Templates\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,12 +36,6 @@
     <Resource Include="Res\Img\logo1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Templates\TestPage.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -9,9 +9,39 @@
       Title="ViewTemplateList">
 
     <Grid>
-        <Label HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               FontSize="50"
-               Content="Mal liste"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <StackPanel Grid.Row="0"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+            <Button Content="Lag ny mal"
+                    FontSize="10"
+                    Width="100"
+                    Margin="10.5"
+                    Click="CreateNewTemplate"/>
+            
+            <Button Content="Rediger Mal"
+                    FontSize="10"
+                    Width="100"
+                    Margin="10.5"
+                    Click="EditTemplate"/>
+
+            <Button Content="Forhåndsvis Mal"
+                    FontSize="10"
+                    Width="100"
+                    Margin="10.5"
+                    Click="PreviewTemplate"/>
+        </StackPanel>
+        
+        <!-- list cr-->
+        <WebBrowser x:Name="Browser"
+                    Grid.Row="1"
+                    Height="auto"
+                    Width="auto"/>
+
     </Grid>
 </Page>

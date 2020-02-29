@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using AppLib.Collection;
+
 namespace EmailGUI.Frames
 {
     /// <summary>
@@ -21,6 +23,21 @@ namespace EmailGUI.Frames
         public ViewTemplateList()
         {
             InitializeComponent();
+        }
+
+        private void CreateNewTemplate(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditTemplate(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PreviewTemplate(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
