@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Res\Img\headerlogo.tif" />
+    <None Remove="Res\Img\headlogo.png" />
     <None Remove="Res\logo1.png" />
     <None Remove="Res\logo2.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Res\Img\headerlogo.tif">
+    <Content Include="Res\Img\headlogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -22,10 +22,6 @@
     <Resource Include="Res\Img\logo2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Templates\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -20,6 +20,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <!-- header -->
@@ -47,7 +48,14 @@
                HorizontalAlignment="Right"
                VerticalAlignment="Center"
                Padding="2"/>
-        
+        <Label Content="Språk: "
+               Grid.Row="3"
+               Grid.Column="0"
+               FontSize="14"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               Padding="2"/>
+
         <!-- inputs -->
         <TextBox x:Name="nameInput"
                  Grid.Row="1"
@@ -71,9 +79,26 @@
                  Margin="2"
                  BorderThickness="1"
                  BorderBrush="LightGray"/>
+
+        <!-- language selecton box -->
+        <ComboBox x:Name="languageSelector"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Right"
+                 Width="200"
+                 FontSize="14"
+                 Padding="1"
+                 Margin="2"
+                 BorderThickness="1"
+                 BorderBrush="LightGray">
+            <ComboBoxItem Content="Engelsk"
+                          IsSelected="True"/>
+            <ComboBoxItem Content="Norsk"/>
+        </ComboBox>
         
         <!-- buttons -->
-        <StackPanel Grid.Row="3"
+        <StackPanel Grid.Row="4"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     HorizontalAlignment="Center"

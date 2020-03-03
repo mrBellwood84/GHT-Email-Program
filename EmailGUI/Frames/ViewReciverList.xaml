@@ -26,13 +26,20 @@
                         VerticalAlignment="Center"
                         HorizontalAlignment="Left">
                 
+                <Button Content="Legg til"
+                        FontSize="10"
+                        Width="100"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="0,0,30,0"
+                        Click="AddReciver"/>
+
                 <Button Content="Åpne"
                         FontSize="10"
                         Width="100"
                         VerticalAlignment="Center"
                         Margin="0,0,10,0"
                         Click="OpenFile"/>
-
                 <Button Content="Lagre"
                         FontSize="10"
                         Width="100"
@@ -79,13 +86,14 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Navn" 
-                                    Binding="{Binding IsAsync=True, Path=FullName}"
+                                    Binding="{Binding Path=FullName}"
                                     MinWidth="200"/>
                 <DataGridTextColumn Header="Epostadresse"
-                                    Binding="{Binding IsAsync=True, Path=Email}"
+                                    Binding="{Binding Path=Email}"
                                     MinWidth="250"/>
-                <DataGridCheckBoxColumn Header="Send"
-                                        Binding="{Binding IsAsync=True, Path=Send}"/>
+                <DataGridTextColumn Header="Språk"
+                                    Binding="{Binding Path=Language}"
+                                    Width="100"/>
             </DataGrid.Columns>
             
             
@@ -96,18 +104,11 @@
               Height="auto"
               Margin="5">
 
-            <Button Content="Legg til"
-                    FontSize="10"
-                    Width="100"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left"
-                    Margin="0,0,10,0"
-                    Click="AddReciver"/>
             <Button Content="Tøm Liste"
                     FontSize="10"
                     Width="100"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Left"
                     Margin="0,0,10,0"
                     Click="EmptyList"/>
 

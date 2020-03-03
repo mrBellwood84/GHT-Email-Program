@@ -15,7 +15,7 @@ namespace AppLib.Email
 
         private string fullName;
         private string email;
-        private bool send = true;
+        private string language;
 
         public string FullName
         {
@@ -55,12 +55,35 @@ namespace AppLib.Email
             }
         }
 
-        public bool Send
+        public string Language
         {
-            get => send;
-            set => send = value;
-        }
+            get
+            {
+                if (language == "" || language == null)
+                {
+                    return "EN";
+                }
+                else
+                {
+                    return language;
+                }
+            }
+            set
+            {
+                string[] valid = new string[] { "EN", "NO" };
+                int index = Array.IndexOf(valid, value.ToUpper());
+                if (index == -1)
+                {
+                    language = "EN";
+                }
+                else
+                {
+                    language = value.ToUpper();
+                }
+                  
+            }
 
+        }
 
         public Reciver()
         {

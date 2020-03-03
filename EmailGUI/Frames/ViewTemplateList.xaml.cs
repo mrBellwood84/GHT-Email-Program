@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using AppLib.Collection;
+using AppLib.Email;
 
 namespace EmailGUI.Frames
 {
@@ -37,7 +38,8 @@ namespace EmailGUI.Frames
 
         private void PreviewTemplate(object sender, RoutedEventArgs e)
         {
-            
+
         }
+
     }
 }

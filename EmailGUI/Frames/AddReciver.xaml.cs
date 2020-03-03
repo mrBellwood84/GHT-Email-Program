@@ -28,12 +28,24 @@ namespace EmailGUI.Frames
         private void CreateReciver(object sender, RoutedEventArgs e)
         {
             Reciver reciver = new Reciver();
-            reciver.FullName = nameInput.Text;
-            reciver.Email = emailInput.Text;
-            App.Recivers.Add(reciver);
+            string name = nameInput.Text;
+            string mail = emailInput.Text;
+            string lang = languageSelector.Text;
 
-            Frames.ViewReciverList reciverList = new Frames.ViewReciverList();
-            NavigationService.Navigate(reciverList);
+            if ((name == "") || (mail == ""))
+            {
+                MessageBox.Show("Data mangler!");
+            }
+            else
+            {
+                reciver.FullName = name;
+                reciver.Email = mail;
+                reciver.Language = lang.Substring(0, 2).ToUpper();
+                App.Recivers.Add(reciver);
+
+                Frames.ViewReciverList reciverList = new Frames.ViewReciverList();
+                NavigationService.Navigate(reciverList);
+            }
         }
 
         private void Abort(object sender, RoutedEventArgs e)
