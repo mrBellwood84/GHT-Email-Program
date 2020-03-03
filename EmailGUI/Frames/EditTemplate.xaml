@@ -1,0 +1,290 @@
+﻿<Page x:Class="EmailGUI.Frames.EditTemplate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EmailGUI.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditTemplate">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- edit content grid-->
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- border divider lines -->
+            <Border Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    Width="5"
+                    Margin="0 20"
+                    BorderBrush="LightGray"
+                    BorderThickness=" 1 0 1 0">
+
+                    
+        </Border>
+            
+            <!-- norwegian edit -->
+            <Grid VerticalAlignment="Top"
+                  HorizontalAlignment="Center"
+                  Margin="10"
+                  Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <!-- lables-->
+                <Label Content="Norsk"
+                       HorizontalAlignment="Center"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0 0 0 10"/>
+                <Label Content="Hilsen Gjest:"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Navnfortreder: "
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Avsenderhilsen: "
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Avsendernavn: "
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Melding"
+                       Grid.Row="5"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Width="100"
+                       Margin="0 10 0 0"/>
+                
+                <!-- inputs -->
+                <TextBox x:Name="guestGreeting_NO"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+                <TextBox x:Name="defaultGuestName_NO"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+                <TextBox x:Name="senderGreeting_NO"
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+                <TextBox x:Name="defaultSenderName_NO"
+                         Grid.Row="4"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+
+                <TextBox x:Name="mailMessage_NO"
+                         Grid.Row="6"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="2"
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Center"
+                         Width="300"
+                         MinHeight="200"
+                         MaxHeight="250"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"/>
+
+            </Grid>
+
+            <!-- english edit -->
+            <Grid VerticalAlignment="Top"
+                  HorizontalAlignment="Center"
+                  Margin="10"
+                  Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- lables-->
+                <Label Content="Engelsk"
+                       HorizontalAlignment="Center"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="0 0 0 10"/>
+                <Label Content="Hilsen Gjest:"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Navnfortreder: "
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Avsenderhilsen: "
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Avsendernavn: "
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalContentAlignment="Right"
+                       Width="100"/>
+                <Label Content="Melding"
+                       Grid.Row="5"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Width="100"
+                       Margin="0 10 0 0"/>
+
+                <!-- inputs -->
+                <TextBox x:Name="guestGreeting_EN"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+                <TextBox x:Name="defaultGuestName_EN"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+                <TextBox x:Name="senderGreeting_EN"
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+                <TextBox x:Name="defaultSenderName_EN"
+                         Grid.Row="4"
+                         Grid.Column="1"
+                         FontSize="14"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Width="200"
+                         Margin="5 2"/>
+
+                <TextBox x:Name="mailMessage_EN"
+                         Grid.Row="6"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="2"
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Center"
+                         Width="300"
+                         MinHeight="200"
+                         MaxHeight="250"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"/>
+
+            </Grid>
+
+
+
+        </Grid>
+
+            
+            <!-- button stackpanel -->
+        <StackPanel Orientation="Horizontal"
+                    Margin="5"
+                    Grid.Row="1">
+            <Button Content="Lagre"
+                    FontSize="10"
+                    Width="100"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="10 0"/>
+            <Button Content="Avbryt"
+                    FontSize="10"
+                    Width="100"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="10 0"
+                    Click="Abort"/>
+        </StackPanel>
+    </Grid>
+</Page>

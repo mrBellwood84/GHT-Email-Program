@@ -12,7 +12,7 @@ namespace AppLib.Collection
          *  'Name' method capitalize each word/Name in string       */
 
 
-        public static string Text(string input)
+        public static string Text(string input, bool setPunctum = true)
         {
             /** Simple formatting of text string. 
              *  Capitalize first character in sentences, defined by punctums.
@@ -64,7 +64,7 @@ namespace AppLib.Collection
 
             int lastCharIndex = result.Length - 1;  // get index of last char in result string
 
-            if (result[lastCharIndex] != '.')       // if last char in result not punctum
+            if ((result[lastCharIndex] != '.') && setPunctum)   // if last char in result not punctum
             {
                 result += ".";                      // append punctum as last char
             }

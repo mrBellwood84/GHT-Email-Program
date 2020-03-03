@@ -37,11 +37,5 @@
                     Click="PreviewTemplate"/>
         </StackPanel>
         
-        <!-- list cr-->
-        <WebBrowser x:Name="Browser"
-                    Grid.Row="1"
-                    Height="auto"
-                    Width="auto"/>
-
     </Grid>
 </Page>

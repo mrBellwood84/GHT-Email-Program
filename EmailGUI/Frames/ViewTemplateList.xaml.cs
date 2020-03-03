@@ -28,7 +28,8 @@ namespace EmailGUI.Frames
 
         private void CreateNewTemplate(object sender, RoutedEventArgs e)
         {
-
+            Frames.EditTemplate newTemplate = new Frames.EditTemplate();
+            NavigationService.Navigate(newTemplate);
         }
 
         private void EditTemplate(object sender, RoutedEventArgs e)

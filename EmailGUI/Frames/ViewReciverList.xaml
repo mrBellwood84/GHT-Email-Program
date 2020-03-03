@@ -87,10 +87,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Navn" 
                                     Binding="{Binding Path=FullName}"
-                                    MinWidth="200"/>
+                                    Width="*"/>
                 <DataGridTextColumn Header="Epostadresse"
                                     Binding="{Binding Path=Email}"
-                                    MinWidth="250"/>
+                                    Width="*"/>
                 <DataGridTextColumn Header="Språk"
                                     Binding="{Binding Path=Language}"
                                     Width="100"/>

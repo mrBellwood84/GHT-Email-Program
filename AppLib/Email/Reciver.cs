@@ -21,9 +21,9 @@ namespace AppLib.Email
         {
             get
             {
-                if ((fullName == null) || (fullName == ""))
+                if ((fullName == null))
                 {
-                    return "NAVN MANGLER";
+                    return "";
                 }
                 else
                 {
