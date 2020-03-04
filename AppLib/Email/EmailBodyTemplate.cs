@@ -6,7 +6,7 @@ using AppLib.Collection;
 
 namespace AppLib.Email
 {
-    class EmailBodyTemplate
+    public class EmailBodyTemplate
     {
         /** Hold content for email body construction
          *  Each string value is set as array for different language capacity.
@@ -29,7 +29,7 @@ namespace AppLib.Email
             }
             set
             {
-                senderGreeting = setGreeting(value);
+                guestGreeting = setGreeting(value);
             }
         }
         public string[] DefaultGuestName
@@ -62,7 +62,7 @@ namespace AppLib.Email
             }
             set
             {
-                senderGreeting = setName(value);
+                defaultSenderName = setName(value);
             }
         }
         public string[] MailMessage

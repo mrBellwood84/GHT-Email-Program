@@ -277,7 +277,8 @@
                     Width="100"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"
-                    Margin="10 0"/>
+                    Margin="10 0"
+                    Click="SaveTemplate"/>
             <Button Content="Avbryt"
                     FontSize="10"
                     Width="100"
