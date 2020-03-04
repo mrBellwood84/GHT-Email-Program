@@ -43,6 +43,26 @@ namespace EmailGUI.Frames
             defaultSenderName_EN.Text = "Reception";
         }
 
+        public EditTemplate(EmailBodyTemplate template)
+        {
+            InitializeComponent();
+
+            guestGreeting_EN.Text = template.EN.GuestGreeting;
+            guestGreeting_NO.Text = template.NO.GuestGreeting;
+
+            defaultGuestName_EN.Text = template.EN.GuestDefaultName;
+            defaultGuestName_NO.Text = template.NO.GuestDefaultName;
+
+            senderGreeting_EN.Text = template.EN.SenderGreeting;
+            senderGreeting_NO.Text = template.NO.SenderGreeting;
+
+            defaultSenderName_EN.Text = template.EN.SenderDefaultName;
+            defaultSenderName_NO.Text = template.NO.SenderDefaultName;
+
+            mailMessage_EN.Text = template.EN.MailText;
+            mailMessage_NO.Text = template.NO.MailText;
+        }
+
         private void Abort(object sender, RoutedEventArgs e)
         {
             Frames.ViewTemplateList vtp = new Frames.ViewTemplateList();
@@ -53,25 +73,40 @@ namespace EmailGUI.Frames
         {
             EmailBodyTemplate template = new EmailBodyTemplate();
 
-            template.GuestGreeting = new string[] { guestGreeting_EN.Text, guestGreeting_NO.Text };
-            template.DefaultGuestName = new string[] { defaultGuestName_EN.Text, defaultGuestName_NO.Text };
-            template.SenderGreeting = new string[] { senderGreeting_EN.Text, senderGreeting_NO.Text };
-            template.DefaultSenderName = new string[] { defaultSenderName_EN.Text, defaultSenderName_NO.Text };
-            template.MailMessage = new string[] { mailMessage_EN.Text, mailMessage_NO.Text };
+            template.EN.GuestGreeting = guestGreeting_EN.Text;
+            template.NO.GuestGreeting = guestGreeting_NO.Text;
+
+            template.EN.GuestDefaultName = defaultGuestName_EN.Text;
+            template.NO.GuestDefaultName = defaultGuestName_NO.Text;
+
+            template.EN.SenderGreeting = senderGreeting_EN.Text;
+            template.NO.SenderGreeting = senderGreeting_NO.Text;
+            
+            template.EN.SenderDefaultName = defaultSenderName_EN.Text;
+            template.NO.SenderDefaultName = defaultSenderName_NO.Text;
+
+            template.EN.MailText = mailMessage_EN.Text;
+            template.NO.MailText = mailMessage_NO.Text;
+
 
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.FileName = "template";
             dlg.InitialDirectory = GetPath.TemplateFolder;
             dlg.DefaultExt = ".json";
-            dlg.Filter = "JSONDATA mail (.json)| *.json";
+            dlg.Filter = "JsonData Mail (.json)| *.json";
 
             Nullable<bool> result = dlg.ShowDialog();
 
             if (result ==  true)
             {
                 string fileName = dlg.FileName;
-                string serialize = JsonSerializer.Serialize(template);
-                File.WriteAllText(fileName, serialize);
+
+                string en = JsonSerializer.Serialize(template.EN);
+                string no = JsonSerializer.Serialize(template.NO);
+
+                string concat = $"{en}|{no}";
+                
+                File.WriteAllText(fileName, concat);
 
                 Frames.ViewTemplateList tpl = new Frames.ViewTemplateList();
                 NavigationService.Navigate(tpl);

@@ -9,72 +9,10 @@ namespace AppLib.Email
     public class EmailBodyTemplate
     {
         /** Hold content for email body construction
-         *  Each string value is set as array for different language capacity.
-         *  
-         *  index 0: english
-         *  index 1: norwegian  */
+         *  Each string value is set as array for different language capacity.  */
 
-
-        private string[] guestGreeting;
-        private string[] defaultGuestName;
-        private string[] senderGreeting;
-        private string[] defaultSenderName;
-        private string[] message;
-
-        public string[] GuestGreeting
-        {
-            get
-            {
-                return guestGreeting;
-            }
-            set
-            {
-                guestGreeting = setGreeting(value);
-            }
-        }
-        public string[] DefaultGuestName
-        {
-            get
-            {
-                return defaultGuestName;
-            }
-            set
-            {
-                defaultGuestName = setName(value);
-            }
-        }
-        public string[] SenderGreeting
-        {
-            get
-            {
-                return senderGreeting;
-            }
-            set
-            {
-                senderGreeting = setGreeting(value);
-            }
-        }
-        public string[] DefaultSenderName
-        {
-            get
-            {
-                return defaultSenderName;
-            }
-            set
-            {
-                defaultSenderName = setName(value);
-            }
-        }
-        public string[] MailMessage
-        {
-            get => message;
-            set
-            {
-                message = setMail(value);
-            }
-        }
-
-
+        public NorwegianContent NO = new NorwegianContent();
+        public EnglishContent EN = new EnglishContent();
         
         // empty default constructor
         public EmailBodyTemplate()
@@ -82,58 +20,45 @@ namespace AppLib.Email
 
         }
 
-
-
-        /** methods for class **/
-
-        // for setting greeting with caplitalize first word
-        public string[] setGreeting(string[] greetingArray)
+        public class EnglishContent
         {
-            string en  = FormatString.Text(greetingArray[0], false);
-            string no = FormatString.Text(greetingArray[1], false);
-            return new string[] { en, no };
+            private string guestGreeting;
+            private string guestDefaultName;
+            private string senderGreeting;
+            private string senderDefaultName;
+            private string mailText;
+
+            public string GuestGreeting 
+            { 
+                get => guestGreeting; 
+                set => guestGreeting = FormatString.Text(value, false); 
+            }
+            public string GuestDefaultName
+            {
+                get => guestDefaultName;
+                set => guestDefaultName = FormatString.Name(value);
+            }
+            public string SenderGreeting
+            {
+                get => senderGreeting;
+                set => senderGreeting = FormatString.Text(value, false);
+            }
+            public string SenderDefaultName
+            {
+                get => senderDefaultName;
+                set => senderDefaultName = FormatString.Name(value);
+            }
+            public string MailText
+            {
+                get => mailText;
+                set => mailText = FormatString.Text(value);
+            }
+            
         }
 
-        // method overloaded to take two sepearte strings rather than an array
-        public string[] setGreeting(string en, string no)
+        public class NorwegianContent : EnglishContent
         {
-            en = FormatString.Text(en, false);
-            no = FormatString.Text(no, false);
-            return new string[] { en, no };
-        }
 
-
-        // for setting capitalized name
-        public string[] setName(string[] nameArray)
-        {
-            string en = FormatString.Name(nameArray[0]);
-            string no = FormatString.Name(nameArray[1]);
-            return new string[] { en, no };
-        }
-
-        // method overloaded to take two sepearte strings rather than an array
-        public string[] setName(string en, string no)
-        {
-            en = FormatString.Name(en);
-            no = FormatString.Name(no);
-            return new string[] { en, no };
-        }
-
-
-        // for setting mail message
-        public string[] setMail(string[] messageArray)
-        {
-            string en = FormatString.Text(messageArray[0]);
-            string no = FormatString.Text(messageArray[1]);
-            return new string[] { en, no };
-        }
-
-        // method overloaded to take two sepearte strings rather than an array
-        public string[] setMail(string en, string no)
-        {
-            en = FormatString.Text(en);
-            no = FormatString.Text(no);
-            return new string[] { en, no };
         }
     }
 }

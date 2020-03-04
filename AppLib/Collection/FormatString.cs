@@ -18,6 +18,8 @@ namespace AppLib.Collection
              *  Capitalize first character in sentences, defined by punctums.
              *  Also add puntum at end of string if not present.    */
 
+            // remove parce symbol from string when getting text from json file
+            input = input.Replace('|', ' ');
 
             string result = "";     // create result string
 
@@ -76,6 +78,9 @@ namespace AppLib.Collection
         public static string Name(string input)
         {
             /** Capitalize name strings */
+
+            // remove parce symbol from string when getting text from json file
+            input = input.Replace('|', ' ');
 
             string result = "";         // set result string
 
