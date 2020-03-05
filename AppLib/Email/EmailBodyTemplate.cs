@@ -11,6 +11,7 @@ namespace AppLib.Email
         /** Hold content for email body construction
          *  Each string value is set as array for different language capacity.  */
 
+        public Content Cont = new Content();
         public NorwegianContent NO = new NorwegianContent();
         public EnglishContent EN = new EnglishContent();
         
@@ -20,7 +21,7 @@ namespace AppLib.Email
 
         }
 
-        public class EnglishContent
+        public class Content
         {
             private string guestGreeting;
             private string guestDefaultName;
@@ -55,8 +56,13 @@ namespace AppLib.Email
             }
             
         }
+        
+        public class EnglishContent : Content
+        {
 
-        public class NorwegianContent : EnglishContent
+        }
+
+        public class NorwegianContent : Content
         {
 
         }

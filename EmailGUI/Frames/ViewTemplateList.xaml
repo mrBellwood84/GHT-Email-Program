@@ -36,6 +36,25 @@
                     Margin="10.5"
                     Click="PreviewTemplate"/>
         </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <WebBrowser x:Name="previewbrowser_NO"
+                        Grid.Column="0"/>
+            <WebBrowser x:Name="previewbrowser_EN"
+                        Grid.Column="2"/>
+            <Border Background="LightGray"
+                    Grid.Column="1">
+                    
+            </Border>
+                    
+
+        </Grid>
         
     </Grid>
 </Page>
