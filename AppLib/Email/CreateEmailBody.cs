@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Mail;
 using System.Text;
 
 using AppLib.Collection;
@@ -40,13 +41,23 @@ namespace AppLib.Email
             string language = reciver.Language;
             string body = populateMailTemplate(language);
 
-            string imageElem = $"<img src=\"..\\Res\\Img\\headlogo.png\" width =\"400\" style=\"padding: 20px\">";
+            string imageElem = $"..\\Res\\Img\\headlogo.png";
 
             body = body.Replace("{image}", imageElem);
 
             return body;
         }
 
+        public MailMessage CreateMail(string senderEmail, string subject)
+        {
+            MailMessage mail = new MailMessage();
+            mail.IsBodyHtml = true;
+            mail.AlternateViews.Add(createMailView());
+            mail.From = new MailAddress(senderEmail);
+            mail.To.Add(reciver.Email);
+            mail.Subject = subject;
+            return mail;
+        }
 
         private string populateMailTemplate(string lang)
         {
@@ -73,6 +84,28 @@ namespace AppLib.Email
                                           .Replace("{SENDER_NAME}", content.SenderDefaultName);
 
             return body;
+        }
+
+        private AlternateView createMailView()
+        {
+            // create mail body
+            string language = reciver.Language;
+            string mailBody = populateMailTemplate(language);
+
+            // get image resource
+            string imagePath = Path.Combine(GetPath.Resources, "Img", "headlogo.png");
+            LinkedResource res = new LinkedResource(imagePath);
+            res.ContentId = Guid.NewGuid().ToString();
+
+            // append image to mail body
+            mailBody = mailBody.Replace("{image}", $"cid:'{res.ContentId}'");
+
+            // create alternative view object
+            AlternateView view = AlternateView.CreateAlternateViewFromString(mailBody);
+            view.LinkedResources.Add(res);
+
+            // return produced object
+            return view;
         }
     }
 }

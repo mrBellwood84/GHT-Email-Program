@@ -104,7 +104,7 @@ namespace EmailGUI.Frames
                 string en = JsonSerializer.Serialize(template.EN);
                 string no = JsonSerializer.Serialize(template.NO);
 
-                string concat = $"{en}|{no}";
+                string concat = $"{en}<JSON-SEPERATOR>{no}";
                 
                 File.WriteAllText(fileName, concat);
 

@@ -79,18 +79,16 @@ namespace AppLib.Collection
         {
             /** Capitalize name strings */
 
-            // remove parce symbol from string when getting text from json file
-            input = input.Replace('|', ' ');
-
             string result = "";         // set result string
 
-            if ((input == "") || (input == null))   // if input string is empty or have value null
+            if ((input == "") || (input == " ") || (input == null))   // if input string is empty or have value null
             {
                 return result;                      // return empty string
             }
 
             string[] arr = splitString(input);      // split string
             int len = arr.Length;
+
 
             result += caplitalize(arr[0]);          // append first name to result
 

@@ -50,7 +50,7 @@ namespace EmailGUI.Frames
             {
                 string filename = dlg.FileName;
                 string filetext = File.ReadAllText(filename);
-                string[] split = filetext.Split('|');
+                string[] split = filetext.Split("<JSON-SEPERATOR>");
 
                 EmailBodyTemplate template = new EmailBodyTemplate();
                 template.EN = JsonSerializer.Deserialize<EmailBodyTemplate.EnglishContent>(split[0]);
@@ -110,11 +110,13 @@ namespace EmailGUI.Frames
             {
                 string filename = dlg.FileName;
                 string filetext = File.ReadAllText(filename);
-                string[] split = filetext.Split('|');
+                string[] split = filetext.Split("<JSON-SEPERATOR>");
 
                 EmailBodyTemplate template = new EmailBodyTemplate();
                 template.EN = JsonSerializer.Deserialize<EmailBodyTemplate.EnglishContent>(split[0]);
                 template.NO = JsonSerializer.Deserialize<EmailBodyTemplate.NorwegianContent>(split[1]);
+
+
 
                 return template;
             }

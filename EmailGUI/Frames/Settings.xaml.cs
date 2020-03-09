@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Net.Mail;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -41,7 +42,6 @@ namespace EmailGUI.Frames
                 SSL.IsChecked       = cf.SSL;
                 senderEmail.Text    = cf.SenderEmail;
             }
-
         }
 
         private void SaveSettings(object sender, RoutedEventArgs e)
@@ -134,7 +134,26 @@ namespace EmailGUI.Frames
 
         private void TestConnection(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ikke implementert...");
+            // creating test email template
+            EmailBodyTemplate template = new EmailBodyTemplate();
+            template.EN.GuestGreeting = "Testing av epost Program";
+            template.EN.SenderGreeting = "Med de beste hilsener";
+            template.EN.SenderDefaultName = "Kristian";
+            template.EN.MailText = "Dette er en test for å sjekke om epost-server og/eller innstillinger i program.\n\n" +
+                "Dersom du har mottatt denne eposten, er ser det ut til at alt virker som det skal\n\n" +
+                "Dersom du har mottatt denne eposten uten noen åpenbar grunn, ta gjerne kontakt.";
+
+            // create test reciver object
+            Reciver reciver = new Reciver();
+            reciver.Email = senderEmail.Text;
+            reciver.FullName = " ";
+
+            // create email body
+            CreateEmailBody emailBody = new CreateEmailBody(template);
+            // append reciver
+            emailBody.ReciverObj = reciver;
+
+            MailMessage mail = emailBody.CreateMail(senderEmail.Text, "TEST");
         }
     }
 }
